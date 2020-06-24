@@ -58,4 +58,10 @@ func main() {
 	mcc := []string{"5812", "5999", "0000"}
 	sum := card.SumByMCC(master.Transactions, mcc)
 	fmt.Println("sum transactions with mcc", mcc, ":", sum)
+
+	category := card.TranslateMCC(master.Transactions[0].MCC)
+	fmt.Println("mcc category of code", master.Transactions[0].MCC, ":", category)
+
+	otherCategory := card.TranslateMCC("5999")
+	fmt.Println("mcc category of code 5999:", otherCategory)
 }
